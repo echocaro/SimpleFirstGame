@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpgeeyq5wxjs4"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_wdykg"]
+[ext_resource type="PackedScene" uid="uid://vihycc7ykbq7" path="res://Scenes/Characters/Ball/ball.tscn" id="2_cxgkd"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_wdykg")
+
+[node name="Ball" parent="." instance=ExtResource("2_cxgkd")]
+
+[node name="Camera2D" type="Camera2D" parent="."]

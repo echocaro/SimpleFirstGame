@@ -1,0 +1,46 @@
+[gd_scene load_steps=14 format=3 uid="uid://vihycc7ykbq7"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Ball/Ball.cs" id="1_ar3bu"]
+[ext_resource type="Texture2D" uid="uid://crnaelm56500f" path="res://Assets/bouncingballanim7.png" id="1_g0vdm"]
+[ext_resource type="Texture2D" uid="uid://bvunhw3ovgpyy" path="res://Assets/bouncingballanim1.png" id="2_01qcg"]
+[ext_resource type="Texture2D" uid="uid://dv8id6r1n1j86" path="res://Assets/bouncingballanim2.png" id="3_sjlci"]
+[ext_resource type="Texture2D" uid="uid://bch1plujg487w" path="res://Assets/bouncingballanim3.png" id="4_pa1xi"]
+[ext_resource type="Texture2D" uid="uid://cg2ljseex2kta" path="res://Assets/bouncingballanim4.png" id="5_uacp4"]
+[ext_resource type="Texture2D" uid="uid://bqxpsjs6a3cup" path="res://Assets/bouncingballanim5.png" id="6_c5r8i"]
+[ext_resource type="Texture2D" uid="uid://dfjg3pa2ra7gp" path="res://Assets/bouncingballanim6.png" id="7_a3pqf"]
+[ext_resource type="Texture2D" uid="uid://dfud3e0cnjyxq" path="res://Assets/bouncingballanim8.png" id="8_mpf6h"]
+[ext_resource type="Texture2D" uid="uid://jo5de3l8xgnh" path="res://Assets/bouncingballanim9.png" id="9_2uq6g"]
+[ext_resource type="Texture2D" uid="uid://tn6rt8acbt00" path="res://Assets/bouncingballanim10.png" id="10_3qh0h"]
+
+[sub_resource type="Animation" id="Animation_3mfln"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_01qcg"), ExtResource("3_sjlci"), ExtResource("4_pa1xi"), ExtResource("5_uacp4"), ExtResource("6_c5r8i"), ExtResource("7_a3pqf"), ExtResource("1_g0vdm"), ExtResource("8_mpf6h"), ExtResource("9_2uq6g"), ExtResource("10_3qh0h"), ExtResource("2_01qcg")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1vsqb"]
+_data = {
+"Idle": SubResource("Animation_3mfln")
+}
+
+[node name="Ball" type="CharacterBody2D"]
+position = Vector2(1, -1)
+script = ExtResource("1_ar3bu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g0vdm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1vsqb")
+}
