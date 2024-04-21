@@ -33,11 +33,15 @@ _data = {
 "Idle": SubResource("Animation_3mfln")
 }
 
-[node name="Ball" type="CharacterBody2D"]
+[node name="Ball" type="CharacterBody2D" node_paths=PackedStringArray("animBallNode", "spriteNode")]
 position = Vector2(1, -1)
 script = ExtResource("1_ar3bu")
+animBallNode = NodePath("AnimationPlayer")
+spriteNode = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 23)
+scale = Vector2(3, 3)
 texture = ExtResource("1_g0vdm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
