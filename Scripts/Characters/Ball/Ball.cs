@@ -39,6 +39,7 @@ public partial class Ball : CharacterBody2D
     }
     else
     {
+      // need to create a different animation
       animBallNode.Play("Idle");
     }
   }
