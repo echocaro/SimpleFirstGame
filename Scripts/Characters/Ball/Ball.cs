@@ -12,14 +12,14 @@ public partial class Ball : CharacterBody2D
 
   public override void _Ready()
   {
-    animBallNode.Play("Idle");
+    animBallNode.Play("Movement");
   }
 
   public override void _PhysicsProcess(double delta)
   {
     Velocity = new(direction.X, direction.Y);
 
-    Velocity *= 5;
+    Velocity *= 50;
 
     MoveAndSlide();
   }
@@ -29,18 +29,11 @@ public partial class Ball : CharacterBody2D
     direction = Input.GetVector(
       "MoveLeft",
       "MoveRight",
-      "MoveDown",
-      "MoveUp"
+      "MoveUp",
+      "MoveDown"
     );
 
-    if (direction == Vector2.Zero)
-    {
-      animBallNode.Play("Idle");
-    }
-    else
-    {
-      // need to create a different animation
-      animBallNode.Play("Idle");
-    }
+
+    animBallNode.Play("Movement");
   }
 }

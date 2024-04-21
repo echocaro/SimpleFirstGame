@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://tn6rt8acbt00" path="res://Assets/bouncingballanim10.png" id="10_3qh0h"]
 
 [sub_resource type="Animation" id="Animation_3mfln"]
-resource_name = "Idle"
+resource_name = "Movement"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -30,7 +30,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1vsqb"]
 _data = {
-"Idle": SubResource("Animation_3mfln")
+"Movement": SubResource("Animation_3mfln")
 }
 
 [node name="Ball" type="CharacterBody2D" node_paths=PackedStringArray("animBallNode", "spriteNode")]
@@ -42,7 +42,7 @@ spriteNode = NodePath("Sprite2D")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 23)
 scale = Vector2(3, 3)
-texture = ExtResource("1_g0vdm")
+texture = ExtResource("2_01qcg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
